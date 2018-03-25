@@ -1,0 +1,14 @@
+  language: python
+  python:
+    - "2.7"
+    - "3.5"
+  install:
+    - pip install codecov
+  script:
+    - python -m unittest TestPolynomial
+    - coverage run unit_test.py
+  after_success:
+    - codecov
+  email:
+  on_success: change
+  on_failure: always
